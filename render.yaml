@@ -2,11 +2,13 @@ databases:
   - name: ems-db
     databaseName: ems
     user: ems_user
+    plan: free
 
 services:
   - type: web
     name: ems-web
     env: python
+    plan: free
     buildCommand: "./build.sh"
     startCommand: "gunicorn ems.wsgi:application"
     envVars:
